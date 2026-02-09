@@ -1,17 +1,17 @@
 /*
- Navicat Premium Data Transfer
+ Navicat Premium Dump SQL
 
- Source Server         : kongbai
+ Source Server         : Kong
  Source Server Type    : MySQL
- Source Server Version : 80037
+ Source Server Version : 90100 (9.1.0)
  Source Host           : localhost:3306
- Source Schema         : javasql
+ Source Schema         : jdbc
 
  Target Server Type    : MySQL
- Target Server Version : 80037
+ Target Server Version : 90100 (9.1.0)
  File Encoding         : 65001
 
- Date: 14/09/2024 10:22:53
+ Date: 09/02/2026 22:48:34
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `history`  (
   `操作时间` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `操作` char(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`NO`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of history
@@ -64,19 +64,37 @@ CREATE TABLE `manager`  (
   `密码` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `用户名` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`账号`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of manager
 -- ----------------------------
 INSERT INTO `manager` VALUES ('', '', '这是个Bug');
-INSERT INTO `manager` VALUES ('123', '123', '吴明军我难受');
+INSERT INTO `manager` VALUES ('123', '123', 'csrat');
 INSERT INTO `manager` VALUES ('123345', '213', '213123');
 INSERT INTO `manager` VALUES ('1234', '1234', '1234');
 INSERT INTO `manager` VALUES ('12345', '12345', '12345');
 INSERT INTO `manager` VALUES ('456', '456', '465');
 INSERT INTO `manager` VALUES ('bai', '123', '白');
 INSERT INTO `manager` VALUES ('kong', '123', '123');
+
+-- ----------------------------
+-- Table structure for notice
+-- ----------------------------
+DROP TABLE IF EXISTS `notice`;
+CREATE TABLE `notice`  (
+  `notice` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of notice
+-- ----------------------------
+INSERT INTO `notice` VALUES ('“一带一路”：心相通，信致远');
+INSERT INTO `notice` VALUES ('宪法之力 守护你我');
+INSERT INTO `notice` VALUES ('首尔万人集会 要求尹锡悦下台');
+INSERT INTO `notice` VALUES ('年轻的你们 千万不要轻易放弃生命');
+INSERT INTO `notice` VALUES ('lol新赛季ig全神班强度如何');
+INSERT INTO `notice` VALUES ('太难做了，css为何如此折磨');
 
 -- ----------------------------
 -- Table structure for storehouse
@@ -88,7 +106,7 @@ CREATE TABLE `storehouse`  (
   `单位` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `数量` int NULL DEFAULT NULL,
   PRIMARY KEY (`物料号`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of storehouse
@@ -117,7 +135,7 @@ CREATE TABLE `storehouse_zhu`  (
   `单位` char(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `数量` int NULL DEFAULT NULL,
   PRIMARY KEY (`物料号`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of storehouse_zhu
@@ -133,5 +151,28 @@ INSERT INTO `storehouse_zhu` VALUES ('242', '六角法兰面螺栓', 'PCS', 2131
 INSERT INTO `storehouse_zhu` VALUES ('321', '焊接方螺母', 'PCS', 1221);
 INSERT INTO `storehouse_zhu` VALUES ('341', '左B柱内下阻断片', 'PCS', 1200);
 INSERT INTO `storehouse_zhu` VALUES ('342', '右B柱内下阻断片', 'PCS', 1200);
+
+-- ----------------------------
+-- Table structure for users_zzw_19
+-- ----------------------------
+DROP TABLE IF EXISTS `users_zzw_19`;
+CREATE TABLE `users_zzw_19`  (
+  `id` int NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '姓名',
+  `major` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '专业',
+  `num` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '学号',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users_zzw_19
+-- ----------------------------
+INSERT INTO `users_zzw_19` VALUES (1, '空白', '计算机', '213803019');
+INSERT INTO `users_zzw_19` VALUES (2, '奶龙', '移动', '221308888');
+INSERT INTO `users_zzw_19` VALUES (3, '东雪莲', '电信', '221208888');
+INSERT INTO `users_zzw_19` VALUES (4, '龙傲天', '联通', '221108888');
+INSERT INTO `users_zzw_19` VALUES (5, '天外飞仙', '天天和', '214589484');
+INSERT INTO `users_zzw_19` VALUES (6, '还珠格格', '妃子', '29');
+INSERT INTO `users_zzw_19` VALUES (7, '白空', '布吉岛', '22');
 
 SET FOREIGN_KEY_CHECKS = 1;
